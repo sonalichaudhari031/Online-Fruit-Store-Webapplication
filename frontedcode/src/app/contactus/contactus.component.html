@@ -1,0 +1,72 @@
+<div class="contact-wrapper">
+  <div class="contact-header">
+    <h1>Contact Our Fruit Support</h1>
+    <p>Humse judi kisi bhi jaankari ya shikayat ke liye humein sampark karein.</p>
+  </div>
+
+  <div class="contact-container">
+    <div class="service-info">
+      <h3>Why Shop With Us?</h3>
+      <div class="info-item">
+        <span class="icon">🌿</span>
+        <div>
+          <h4>100% Organic</h4>
+          <p>Hum sirf "Organic Mango Hub" jaise verified vendors se fruits late hain.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="icon">🏪</span>
+        <div>
+          <h4>Multi-Vendor Choice</h4>
+          <p>Ek hi fruit ke liye alag shops se compare karein.</p>
+        </div>
+      </div>
+      <div class="info-item">
+        <span class="icon">🚚</span>
+        <div>
+          <h4>Fast Delivery</h4>
+          <p>Fresh garden fruits seedha aapke ghar tak fast delivery ke saath.</p>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="direct-contact">
+        <p><strong>📧 Email:</strong> support@fruitstore.com</p>
+        <p><strong>📞 Phone:</strong> +91 98765 43210</p>
+        <p><strong>📍 Address:</strong> Mumbai Fresh Market, India</p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <form (ngSubmit)="onSubmit()"> 
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" name="name" ngModel required placeholder="Enter your name" />
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" name="email" ngModel required placeholder="Enter your email" />
+        </div>
+
+        <div class="form-group">
+          <label>How can we help?</label>
+          <select name="service" ngModel>
+            <option value="Order Status">Order Status</option>
+            <option value="Fruit Quality">Fruit Quality Issue</option>
+            <option value="Delivery">Delivery Delay</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea name="message" ngModel rows="4" placeholder="Write your message here..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+    </div>
+  </div>
+</div>

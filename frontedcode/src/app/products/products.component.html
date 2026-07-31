@@ -1,0 +1,209 @@
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FreshFruitStore</title>
+</head>
+<body>
+
+
+
+
+  <header class="navbar">
+    <div class="logo" style="font-size: x-large;">🍎 FreshFruitStore</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+      <a href="#" class="cart">🛒 Cart</a>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <h1>Our Fresh & Organic Fruits</h1>
+    <p>Pick your favorite fruits and enjoy freshness delivered to your doorstep.</p>
+    <button class="shop-btn">Shop Now</button>
+  </section>
+
+
+  <section class="products">
+    <div class="product-card">
+      <img src="assets/images/Apple.png" alt="Apple">
+      <h3>Apple</h3>
+      <p>₹120 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/Strawberies.png" alt="Strawberies">
+      <h3>Strawberies</h3>
+      <p>₹60 / Dozen</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/Dadim.JPEG" alt="Dadim">
+      <h3>Dadim</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/Pinaple.png" alt="Strawberies">
+      <h3>Strawberies</h3>
+      <p>₹60 / Dozen</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="assets/images/Grapve.JPEG" alt="Strawberies">
+      <h3>Strawberies</h3>
+      <p>₹60 / Dozen</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="assets/images/sitafal.JPEG" alt="Strawberies">
+      <h3>Strawberies</h3>
+      <p>₹60 / Dozen</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+  
+
+    <div class="product-card">
+      <img src="assets/images/Guva.png" alt="Guva">
+      <h3>Guva</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+
+    
+    <div class="product-card">
+      <img src="assets/images/Orange Photo.png" alt="Dadim">
+      <h3>Orange</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    
+    <div class="product-card">
+      <img src="assets/images/banana.png" alt="Dadim">
+      <h3>Banana</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    
+    <div class="product-card">
+      <img src="assets/images/Watermelon.JPEG" alt="watermelon">
+      <h3>Watermelon</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="assets/images/papi.jpg" alt="Papai">
+      <h3>Papai</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+     <div class="product-card">
+      <img src="assets/images/kevi.JPEG" alt="Kevi">
+      <h3>Kevi</h3>
+      <p>₹80 / Kg</p>
+      <button class="add-btn">Add to Cart</button>
+    </div>
+
+  </section>
+
+
+
+  
+
+</body>
+</html>
+
+
+ -->
+
+
+
+
+
+ <header class="navbar">
+  <div class="logo" style="font-size: x-large;">🍎 FreshFruitStore</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+    <a href="#">prodcutdetails</a>
+    <a href="#" class="cart">🛒 Cart</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Our Fresh & Organic Fruits</h1>
+  <p>Pick your favorite fruits and enjoy freshness delivered to your doorstep.</p>
+  <button class="shop-btn">Shop Now</button>
+</section>
+
+
+<div class="slider-wrapper">
+
+
+  <button class="arrow left" (click)="prevSlide()">&#10094;</button>
+
+  <div class="slider">
+
+    <div class="grid-container">
+  <div class="product-card"
+       *ngFor="let fruit of getVisibleFruits()"
+       [routerLink]="['/product-details', fruit.id]"
+       style="cursor:pointer">
+
+    <img [src]="fruit.img" [alt]="fruit.name">
+    <h3>{{ fruit.name }}</h3>
+    <p>₹80 / Kg</p>
+
+    
+    <button class="add-btn" (click)="$event.stopPropagation()">
+      Add to Cart
+    </button>
+
+  </div>
+</div>
+
+  </div>
+
+  <button class="arrow right" (click)="nextSlide()">&#10095;</button>
+</div>
+
+<div class="dots">
+  <button
+    *ngFor="let slide of [].constructor(totalSlides); let i = index"
+    (click)="currentSlide = i"
+    [class.active]="currentSlide === i">
+  </button>
+</div> 
+ 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+

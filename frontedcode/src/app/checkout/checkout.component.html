@@ -1,0 +1,93 @@
+<div class="checkout-wrapper">
+  <div class="checkout-container">
+    <header class="page-header">
+      <h1>Secure Checkout</h1>
+      <p>Finalize your fresh fruit order</p>
+    </header>
+
+    <div class="checkout-grid">
+      <section class="checkout-card billing-form">
+        <h3><i class="icon">📍</i> Shipping Address</h3>
+        <div class="grid-form">
+          <div class="input-group">
+            <label>Full Name</label>
+            <input type="text" [(ngModel)]="fullName" placeholder="Enter your name">
+          </div>
+          
+          <div class="input-group">
+            <label>Phone Number</label>
+            <input type="text" [(ngModel)]="phoneNumber" placeholder="10-digit number">
+          </div>
+
+          <div class="input-group full">
+            <label>Email Address</label>
+            <input type="email" [(ngModel)]="email" placeholder="email@example.com">
+          </div>
+
+          <div class="input-group full">
+            <label>Street Address</label>
+            <textarea [(ngModel)]="address" placeholder="Flat, Street, Area"></textarea>
+          </div>
+
+          <div class="input-group">
+            <label>City</label>
+            <input type="text" [(ngModel)]="city" placeholder="Your City">
+          </div>
+
+          <div class="input-group">
+            <label>State</label>
+            <select [(ngModel)]="state" class="custom-select">
+              <option value="Maharashtra">Maharashtra</option>
+              <option value="Gujarat">Gujarat</option>
+              <option value="Delhi">Delhi</option>
+              <option value="Karnataka">Karnataka</option>
+              <option value="Punjab">Punjab</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <aside class="checkout-card order-preview">
+        <h3><i class="icon">📦</i> Order Summary</h3>
+        <div class="items-list">
+          <div class="item-row-billing" *ngFor="let item of cartItems">
+            <div class="fruit-info">
+              <img [src]="'http://localhost:8080/uploads/' + item.img" class="fruit-thumb" alt="fruit">
+              <div class="fruit-text">
+                <span class="name">{{ item.fruitName || item.name }}</span>
+                <span class="qty">Qty: {{ item.quantity || 1 }}</span>
+              </div>
+            </div>
+            <span class="price">₹{{ (item.price || 0) * (item.quantity || 1) }}</span>
+          </div>
+        </div>
+
+        <div class="payment-details">
+          <div class="pay-row"><span>Subtotal</span><span>₹{{ subtotal }}</span></div>
+          <div class="pay-row"><span>Shipping</span><span class="free">₹{{ shippingCost }}</span></div>
+          <div class="pay-row grand-total">
+            <span>Total Payable</span>
+            <span class="total-val">₹{{ total }}</span>
+          </div>
+        </div>
+
+        <button class="primary-btn" (click)="placeOrder()" [disabled]="cartItems.length === 0">
+          Confirm & Place Order
+        </button>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<div class="success-overlay" *ngIf="showSuccess">
+  <div class="success-card">
+    <div class="success-icon">✓</div>
+    <h2>Order Successful!</h2>
+    <p>Thank you <b>{{fullName}}</b>. We are processing your order.</p>
+    <div class="countdown-timer">
+      Redirecting in <span>{{countdown}}</span> seconds...
+    
+      <button class="secondary-btn" (click)="router.navigate(['/fruitlist'])">
+   <i class="icon">🛒</i> Back to Shop
+</button>
+</div>

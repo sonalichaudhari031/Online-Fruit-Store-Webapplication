@@ -1,0 +1,21 @@
+<div class="login-page-container">
+  <div class="login-card">
+    <h2 class="login-title">Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+      <div class="input-box">
+        <label>Email</label>
+        <input type="email" name="email" ngModel required placeholder="Enter email" />
+      </div>
+
+      <div class="input-box">
+        <label>Password</label>
+        <input type="password" name="password" ngModel required placeholder="Enter password" />
+      </div>
+
+      <button type="submit" class="btn-login">Login</button>
+    </form>
+    <p class="footer-text">
+      Don't have an account? <a routerLink="/register">Register here</a>
+    </p>
+  </div>
+</div>

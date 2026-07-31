@@ -1,0 +1,66 @@
+<div class="cart-wrapper">
+  <div class="bg-shape circle-1"></div>
+  <div class="bg-shape circle-2"></div>
+
+  <div class="cart-glass-container">
+    <div class="cart-header">
+      <h1><i class="cart-icon">🛒</i> My Shopping Cart</h1>
+    </div>
+
+    <div class="empty-cart-content" *ngIf="cartItems.length === 0">
+      <div class="illustration-box">
+        <img src="https://cdn-icons-png.flaticon.com/512/11329/11329073.png" alt="Empty Cart">
+      </div>
+      <h2>Your basket is empty</h2>
+      <p>Fresh fruits are waiting for you!</p>
+      <button class="shop-now-btn" (click)="router.navigate(['/fruitlist'])">Explore Fruits</button>
+    </div>
+
+    <div class="table-responsive" *ngIf="cartItems.length > 0">
+      <table class="custom-cart-table">
+        <thead>
+          <tr>
+            <th>Fruit</th>
+            <th>Name</th>
+            <th>Price/Unit</th>
+            <th>Qty</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartItems">
+            <td>
+              <img [src]="'http://localhost:8080/uploads/' + (item.fruit?.img || item.img)" class="table-img" alt="fruit">
+            </td>
+            <td class="fw-bold">
+              {{ item.fruit?.name || item.fruitName || item.name }}
+            </td>
+            <td>
+              ₹ {{ item.fruit?.price || (item.quantity > 0 ? (item.price / item.quantity) : 0) }}
+            </td>
+            <td><span class="qty-pill">{{ item.quantity || 1 }}</span></td>
+            <td class="fw-bold text-success">
+              ₹ {{ (item.fruit?.price || item.price) * (item.quantity || 1) }}
+            </td>
+            <td>
+              <button class="remove-btn-fancy" (click)="removeItem(item)">
+                Remove
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="cart-footer-modern">
+        <div class="grand-total-box">
+          <span class="total-text">Total Payable:</span>
+          <span class="total-price">₹ {{ getCartTotal() }}</span>
+        </div>
+        <button class="checkout-btn-green" (click)="router.navigate(['/checkout'])">
+          Proceed to Checkout ➔
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

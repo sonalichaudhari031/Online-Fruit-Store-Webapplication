@@ -1,0 +1,15 @@
+.banner-container {
+  width: 100%;
+  cursor: pointer; /* Taaki pata chale ki ye clickable hai */
+  overflow: hidden;
+}
+
+.banner-img {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.banner-img:hover {
+  transform: scale(1.02); /* Hover karne par halka zoom effect */
+}

@@ -1,0 +1,112 @@
+<div class="admin-dashboard-wrapper">
+  <div class="container py-4"> <div class="active-banner p-5 rounded-4 shadow-sm mb-4">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h6 class="text-white-50 text-uppercase small ls-1 mb-2">Current Management Console</h6>
+          <h1 class="fw-bold mb-0 text-white display-5">
+            <i class="fas fa-store-alt me-3"></i>{{ shopId != 0 ? shopName : 'Select Your Shop' }}
+          </h1>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <div class="bg-white p-3 rounded-4 shadow-sm text-dark mt-3 mt-md-0">
+            <label class="form-label fw-bold text-success small mb-1">Active Shop Picker:</label>
+            <select class="form-select border-0 bg-light fw-bold" [(ngModel)]="shopId" (change)="onShopChange()">
+              <option [value]="0" disabled>-- Choose Shop --</option>
+              <option *ngFor="let shop of allShops" [value]="shop.id">{{ shop.shopName }}</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="shopId != 0; else noShop">
+      <div class="row g-4">
+        
+        <div class="col-md-5">
+          <div class="form-card p-4 rounded-4 shadow-sm bg-white border-green-dashed h-100">
+            <h4 class="mb-4 text-dark fw-bold border-bottom pb-2">Add New Fruit</h4>
+            
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-muted">Fruit Name</label>
+              <input type="text" [(ngModel)]="newFruit.name" class="form-control" placeholder="e.g. Fresh Orange">
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label fw-bold small text-muted">Description</label>
+              <textarea [(ngModel)]="newFruit.description" class="form-control" rows="2"></textarea>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label fw-bold small text-muted">Price (₹)</label>
+                <input type="number" [(ngModel)]="newFruit.price" class="form-control">
+              </div>
+              <div class="col-6">
+                <label class="form-label fw-bold small text-muted">Stock Qty</label>
+                <input type="number" [(ngModel)]="newFruit.quantity" class="form-control">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label fw-bold small text-muted">Fruit Image</label>
+              <input type="file" (change)="onFileSelected($event)" class="form-control">
+            </div>
+
+            <button class="btn btn-fresh-green w-100 py-3 fw-bold text-white shadow" (click)="saveFruitWithImage()">
+              ADD TO INVENTORY
+            </button>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <div class="inventory-card shadow-sm rounded-4 bg-white overflow-hidden border">
+            <div class="p-3 border-bottom d-flex justify-content-between align-items-center bg-light">
+              <h4 class="mb-0 text-success fw-bold">Fruit Inventory</h4>
+              <span class="badge bg-success rounded-pill px-3 py-2">{{ fruits.length }} Items</span>
+            </div>
+            
+            <div class="inventory-scroll-container">
+              <table class="table table-hover align-middle mb-0">
+                <thead class="sticky-top sky-blue-header">
+                  <tr>
+                    <th class="ps-4">Item</th>
+                    <th>Fruit Details</th>
+                    <th>Price</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let f of fruits">
+                    <td class="ps-4">
+                      <img [src]="'http://localhost:8080/uploads/' + f.img" width="60" height="60" class="rounded-3 border shadow-sm object-fit-cover" onerror="this.src='assets/placeholder.png'">
+                    </td>
+                    <td>
+                      <div class="fw-bold text-dark fs-6">{{ f.name }}</div>
+                      <span class="badge bg-soft-success text-success" *ngIf="f.available" style="font-size: 10px;">Stocked</span>
+                    </td>
+                    <td>
+                      <div class="fw-bold text-success">₹{{ f.price }}</div>
+                    </td>
+                    <td class="text-center">
+                      <button (click)="deleteFruit(f.id)" class="btn btn-remove">
+                        <i class="fas fa-trash-alt me-1"></i> REMOVE
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <ng-template #noShop>
+      <div class="text-center p-5 bg-white rounded-4 shadow-sm mt-4 border border-success border-opacity-10">
+        <h3 class="fw-bold text-success">Please select a store to begin management</h3>
+      </div>
+    </ng-template>
+
+  </div>
+</div>

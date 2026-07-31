@@ -1,0 +1,46 @@
+<nav class="navbar">
+  <div class="logo">🍏 Fruit Store</div>
+  <ul class="nav-links">
+    <li><a routerLink="/">🏠 Home</a></li>
+    <li><a routerLink="/cart">🛒 Cart</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li class="admin-link"><a routerLink="/admin/shops">⚙️ Admin Panel</a></li>
+    <li><a routerLink="/contact-us">Contact Us</a></li>
+  </ul>
+</nav>
+
+<div class="green-space">
+  <h1>Fresh & Healthy Fruits</h1>
+  <p>Choose your favorite fruits and stay healthy!</p>
+</div>
+
+<div class="parent-wrapper" *ngIf="fruits.length > 0; else emptyState">
+  
+  <button class="nav-btn prev" (click)="scrollLeft()">&#10094;</button>
+
+  <div class="carousel-container" #fruitContainer>
+    <div class="grid-layout">
+      <div class="fruit-row" *ngFor="let row of getRows(fruits)">
+        <div class="fruit-card" *ngFor="let fruit of row; trackBy: trackById">
+          <img [src]="fruit.img" [alt]="fruit.name" onerror="this.src='assets/placeholder.png'">
+          <div class="info">
+            <span class="shop">🏪 {{ fruit.shopName }}</span>
+            <h3>{{ fruit.name }}</h3>
+            <span class="price">₹{{ fruit.price }} /kg</span>
+            <div class="actions">
+              <button class="view-btn" (click)="viewDetails(fruit.id)">View Details</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="nav-btn next" (click)="scrollRight()">&#10095;</button>
+</div>
+
+<ng-template #emptyState>
+  <div class="empty-state text-center p-5">
+    <p>No fruits available 😔</p>
+  </div>
+</ng-template>

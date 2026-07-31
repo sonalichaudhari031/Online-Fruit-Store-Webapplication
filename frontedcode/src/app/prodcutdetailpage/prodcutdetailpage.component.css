@@ -1,0 +1,137 @@
+/* ================= 1. GLOBAL & CONTAINER ================= */
+.detail-container {
+    max-width: 2000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #fdfdfd;
+}
+
+/* ================= 2. MAIN CARD: PREMIUM TOUCH ================= */
+.main-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+    background: #ffffff;
+    padding: 60px;
+    border-radius: 35px; /* Attractive Rounded Card */
+    box-shadow: 0 25px 50px rgba(0,0,0,0.07); /* Floating Card Look */
+    margin-bottom: 60px;
+    border: 1px solid #f2f2f2;
+}
+
+/* Left: Extra Big Image */
+.image-section { flex: 1.6; text-align: center; }
+.main-img { 
+    width: 115%; 
+    max-width: 650px; 
+    filter: drop-shadow(0 30px 45px rgba(0,0,0,0.15));
+    transition: transform 0.3s;
+}
+.main-img:hover { transform: scale(1.03); }
+
+/* Right: Details */
+.info-section { flex: 1; }
+
+.shop-badge {
+    color: #b81111; /* Bold Red */
+    font-size: 20px;
+    font-weight: 800;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.info-section h1 { 
+    font-size: 60px; 
+    font-weight: 900; 
+    margin: 5px 0 15px 0; 
+    color: #1a1a1a;
+    line-height: 1;
+}
+
+.price-box { display: flex; align-items: baseline; margin-bottom: 25px; }
+.amount { font-size: 45px; font-weight: 900; color: #27ae60; }
+.unit { margin-left: 15px; color: #888; font-size: 22px; }
+
+/* Spacing and Total Section */
+.controls-row {
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.total-price {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px dashed #ddd;
+}
+.total-amount { font-size: 38px; font-weight: 900; color: #000; }
+
+/* Bada Add to Basket Button */
+.cart-btn {
+    width: 100%;
+    padding: 22px;
+    background: #135f6d;
+    color: #fff;
+    border: none;
+    border-radius: 15px;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 12px 25px rgba(192, 57, 43, 0.3);
+}
+
+/* ================= 3. SUGGESTIONS WITH SCROLLBAR ================= */
+.s-header { display: flex; align-items: center; margin-bottom: 40px; }
+.s-header::before, .s-header::after { content: ''; flex: 1; height: 3px; background: #000; }
+.s-header h3 { padding: 0 25px; font-size: 26px; font-weight: 900; }
+
+.suggestion-grid {
+    display: flex;
+    gap: 25px;
+    overflow-x: auto; /* Scrollbar on */
+    padding: 20px 5px 40px;
+}
+
+/* Stylish Scrollbar */
+.suggestion-grid::-webkit-scrollbar { height: 8px; }
+.suggestion-grid::-webkit-scrollbar-thumb { background: #c0392b; border-radius: 10px; }
+
+.suggest-card {
+    flex: 0 0 320px; /* Bada Attractive Card */
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    border: 1px solid #eee;
+    transition: 0.4s;
+}
+.suggest-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+
+.s-shop-name { color: #1a1515; font-weight:900; font-size: 18px; display: block; margin-bottom: 10px; }
+
+.s-img-container {
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.s-img-container img { max-height: 150px; width: auto; object-fit: contain; }
+
+/* Attractive View Details Link */
+.view-link {
+    display: block;
+    padding: 12px;
+    background: #22661f;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 800;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.view-link:hover { background: #000; }

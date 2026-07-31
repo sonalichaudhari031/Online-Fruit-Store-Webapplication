@@ -1,0 +1,63 @@
+<div class="detail-container" *ngIf="product">
+  <button class="back-btn" (click)="goBack()">← Back</button>
+
+  <div class="main-card">
+    <div class="image-section">
+      <img [src]="product.img" [alt]="product.name" class="main-img">
+    </div>
+
+    <div class="info-section">
+      <span class="category-badge">Premium Quality</span>
+      
+      <div class="shop-badge">
+        <span class="shop-icon">🏪</span> {{ product.shopName || 'My Fruit Shop' }}
+      </div>
+
+      <h1>{{ product.name }}</h1>
+
+      <div class="price-box">
+        <span class="amount">₹{{ product.price }}</span>
+        <span class="unit">/ kg</span>
+      </div>
+
+      <div class="controls-row">
+        <div class="weight-box">
+           <label>Select Weight:</label>
+           <select class="custom-dropdown" [(ngModel)]="selectedWeight" (change)="updateTotal()">
+             <option [value]="0.25">250 g</option>
+             <option [value]="0.5">500 g</option>
+             <option [value]="1">1 kg</option>
+           </select>
+        </div>
+
+        <div class="total-price">
+          <span class="total-label">Total Amount:</span>
+          <span class="total-amount">₹{{ totalPrice }}</span>
+        </div>
+      </div>
+
+      <button class="cart-btn" (click)="addToBasket()">Add to Basket</button>
+    </div>
+  </div>
+
+  <div class="suggestions-wrapper">
+    <div class="s-header">
+      <h3>You May Also Like</h3>
+    </div>
+
+    <div class="suggestion-grid">
+      <div class="suggest-card" *ngFor="let s of suggestions">
+        <span class="s-shop-name">🏪 {{ s.shopName || 'Fruit Shop' }}</span>
+        
+        <div class="s-img-container">
+          <img [src]="s.img" [alt]="s.name">
+        </div>
+        <div class="s-content">
+          <h4>{{ s.name }}</h4>
+          <span class="s-price">₹{{ s.price }} / kg</span>
+          <a [routerLink]="['/product-details', s.id]" class="view-link">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

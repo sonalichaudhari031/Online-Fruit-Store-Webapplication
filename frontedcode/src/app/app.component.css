@@ -1,0 +1,23 @@
+.registered-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+.registered-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.registered-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  pointer-events: none; /* click passes to container */
+}

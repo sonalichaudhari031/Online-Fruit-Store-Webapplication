@@ -1,0 +1,190 @@
+/* ================= 1. NAVBAR (Broad & Premium) ================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #1b5e20, #2e7d32);
+  color: #fff;
+  padding: 25px 40px; 
+  font-size: larger;
+  font-weight: 1000;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.navbar .logo { 
+  font-size: 36px; 
+  font-weight: 800; 
+  letter-spacing: 1px;
+}
+
+.nav-links { list-style: none; display: flex; gap: 35px; margin: 0; padding: 0; }
+.nav-links a { 
+  color: #fff; 
+  text-decoration: none; 
+  font-size: 30px; 
+  font-weight: 600; 
+  transition: 0.3s; 
+}
+.nav-links a:hover { color: #c8e6c9; }
+
+/* ================= 2. HERO AREA (Broad & High) ================= */
+.green-space {
+  background: linear-gradient(to bottom, #a5d6a7, #c8e6c9);
+  text-align: center;
+  padding: 110px 20px; 
+  color: #1b5e20;
+}
+
+.green-space h1 { 
+  font-size: 3.8rem; 
+  font-weight: 900; 
+  margin-bottom: 10px;
+}
+
+/* ================= 3. LAYOUT & SCROLL LOGIC ================= */
+.parent-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 60px; /* Space for side arrows */
+  margin-top: 30px;
+}
+
+.carousel-container {
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 20px 0;
+  scrollbar-width: none; /* Firefox: Hide scrollbar */
+}
+
+/* Chrome/Safari: Hide scrollbar for cleaner look with arrows */
+.carousel-container::-webkit-scrollbar {
+  display: none; 
+}
+
+/* Grid for 2 Lines */
+.grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Gap between top and bottom line */
+}
+
+.fruit-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+}
+
+/* ================= 4. FRUIT CARDS (Attractive & 5 per row) ================= */
+.fruit-card {
+  flex: 0 0 calc((100% - 80px) / 5); /* Force 5 cards in view */
+  min-width: 250px; /* To prevent squishing on small screens */
+  background: #fff;
+  border-radius: 25px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid #f0f0f0;
+}
+
+.fruit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  border-color: #a5d6a7;
+}
+
+.fruit-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  margin-bottom: 20px;
+  transition: transform 0.5s ease;
+}
+
+.fruit-card:hover img {
+  transform: scale(1.1);
+}
+
+/* Shop Badge Styling */
+.info .shop { 
+  font-size: 13px; 
+  color: #1b5e20; 
+  font-weight: 800; 
+  margin-bottom: 12px; 
+  display: inline-block;
+  background: #e8f5e9;
+  padding: 5px 15px;
+  border-radius: 50px;
+  border: 1px solid #2e7d32;
+  text-transform: uppercase;
+}
+
+.info h3 { 
+  font-size: 24px; 
+  color: #1b5e20; 
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.info .price { 
+  display: block; 
+  font-size: 22px; 
+  font-weight: 900; 
+  color: #2e7d32; 
+  margin-bottom: 18px; 
+}
+
+/* ================= 5. NAVIGATION ARROWS ================= */
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #2e7d32;
+  color: white;
+  border: none;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: #8b0000; /* Maroon color on hover */
+  transform: translateY(-50%) scale(1.1);
+}
+
+.nav-btn.prev { left: 5px; }
+.nav-btn.next { right: 5px; }
+
+/* ================= 6. VIEW DETAILS BUTTON ================= */
+.view-btn {
+  width: 100%;
+  background: linear-gradient(135deg, #8b0000, #a00000);
+  color: #fff;
+  border: none;
+  padding: 14px; 
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: auto; /* Push to bottom of card */
+}
+
+.view-btn:hover {
+  background: #d32f2f;
+  box-shadow: 0 4px 12px rgba(139,0,0,0.3);
+}

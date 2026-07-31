@@ -1,0 +1,75 @@
+<div class="container mt-5 mb-5">
+  <div class="text-center mb-5">
+    <h2 class="display-5 fw-bold text-primary">Admin Dashboard</h2>
+    <p class="text-muted">Manage your inventory across all active locations</p>
+    <hr class="w-25 mx-auto border-2 border-primary">
+  </div>
+
+  <div class="row g-4">
+    <div class="col-md-4" *ngFor="let shop of shops">
+      <div class="card h-100 shadow-sm border-0 rounded-4 transition-hover border-top border-primary border-4">
+        <div class="card-body text-center p-4">
+          <div class="shop-icon mb-3 bg-light-primary">
+            <i class="fas fa-store fa-3x text-primary"></i>
+          </div>
+          <h3 class="fw-bold text-dark">{{ shop.shopName }}</h3>
+          <p class="badge bg-light text-secondary border">Shop ID: {{ shop.id }}</p>
+          <div class="mb-3">
+            <span class="badge bg-success">ACTIVE</span>
+          </div>
+          <button class="btn btn-primary w-100 py-2 fw-bold" (click)="goToManageFruits(shop.id)">
+            <i class="fas fa-edit me-2"></i>Manage Fruits
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4 transition-hover">
+        <div class="card-body text-center p-4">
+          <div class="shop-icon mb-3 bg-light"><i class="fas fa-apple-alt fa-3x text-danger"></i></div>
+          <h3 class="fw-bold text-dark">Royal Fruit Palace</h3>
+          <p class="badge bg-light text-secondary border">Shop ID: 102</p>
+          <div class="mb-3"><span class="badge bg-success">ACTIVE</span></div>
+          <button class="btn btn-outline-primary w-100 py-2 fw-bold">Manage Fruits</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4 transition-hover">
+        <div class="card-body text-center p-4">
+          <div class="shop-icon mb-3 bg-light"><i class="fas fa-lemon fa-3x text-warning"></i></div>
+          <h3 class="fw-bold text-dark">Golden Apple Store</h3>
+          <p class="badge bg-light text-secondary border">Shop ID: 103</p>
+          <div class="mb-3"><span class="badge bg-success">ACTIVE</span></div>
+          <button class="btn btn-outline-primary w-100 py-2 fw-bold">Manage Fruits</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4 transition-hover">
+        <div class="card-body text-center p-4">
+          <div class="shop-icon mb-3 bg-light"><i class="fas fa-seedling fa-3x text-success"></i></div>
+          <h3 class="fw-bold text-dark">Mumbai Organic Hub</h3>
+          <p class="badge bg-light text-secondary border">Shop ID: 104</p>
+          <div class="mb-3"><span class="badge bg-success">ACTIVE</span></div>
+          <button class="btn btn-outline-primary w-100 py-2 fw-bold">Manage Fruits</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm border-0 rounded-4 transition-hover">
+        <div class="card-body text-center p-4">
+          <div class="shop-icon mb-3 bg-light"><i class="fas fa-leaf fa-3x text-info"></i></div>
+          <h3 class="fw-bold text-dark">Healthy Berry Mart</h3>
+          <p class="badge bg-light text-secondary border">Shop ID: 105</p>
+          <div class="mb-3"><span class="badge bg-danger">CLOSED</span></div>
+          <button class="btn btn-outline-secondary w-100 py-2 fw-bold" disabled>Inactive</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

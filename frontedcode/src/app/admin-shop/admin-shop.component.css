@@ -1,0 +1,59 @@
+.container {
+  background: #f1f8e9; /* Wahi layout, bas light green background */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 1200px; /* Thoda bada dikhne ke liye width badha di */
+  margin: auto;
+}
+
+.card {
+  border: none;
+  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Default halki shadow */
+}
+
+/* Hover effect wahi pehle wala */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1) !important;
+  border-bottom: 4px solid #800000; /* Hover par niche maroon line */
+}
+
+.card-body h3 {
+  color: #2d5a27; /* Dark Green (Organic feel) */
+  font-weight: 700;
+  margin-bottom: 15px;
+  font-size: 1.6rem; /* Text size thoda bada */
+}
+
+/* Button style wahi hai, bas Green se Maroon kar diya */
+.btn-success {
+  background: linear-gradient(45deg, #800000, #a00000); /* Maroon Gradient */
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: white;
+  box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
+  width: 90%; /* Button thoda bada dikhega */
+  margin: 10px auto;
+  display: block;
+}
+
+/* Hover par button thoda chamkega */
+.btn-success:hover {
+  background: linear-gradient(45deg, #a00000, #800000);
+  transform: scale(1.02);
+}
+
+/* Price ke liye special color */
+.price-tag {
+  color: #800000;
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}

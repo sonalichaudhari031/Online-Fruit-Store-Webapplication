@@ -1,0 +1,85 @@
+.login-page-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Greenish background for fresh organic vibe */
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%); 
+}
+
+.login-card {
+  background: white;
+  padding: 50px; /* Padding badha di gayi hai card bada karne ke liye */
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px; /* Card ki width thodi aur badha di hai */
+  text-align: center;
+  border-top: 8px solid #800000; /* Maroon top border */
+}
+
+.login-title {
+  color: #2d5a27; /* Dark Green for Organic look */
+  margin-bottom: 35px;
+  font-size: 2.5rem; /* Heading thodi badi */
+  font-weight: 700;
+}
+
+.input-box {
+  text-align: left;
+  margin-bottom: 25px;
+}
+
+.input-box label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 15px; /* Input boxes bhi thode bade aur comfortable */
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Focus effect with Green border */
+.input-box input:focus {
+  outline: none;
+  border-color: #2d5a27; 
+  box-shadow: 0 0 10px rgba(45, 90, 39, 0.1);
+}
+
+/* Red (Maroon) Button */
+.btn-login {
+  width: 100%;
+  padding: 15px;
+  background-color: #800000; /* Red/Maroon theme */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 15px;
+}
+
+.btn-login:hover {
+  background-color: #a00000;
+  transform: translateY(-2px);
+}
+
+.footer-text {
+  margin-top: 30px;
+  color: #666;
+}
+
+.footer-text a {
+  color: #2d5a27;
+}

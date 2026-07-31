@@ -1,0 +1,189 @@
+/* ===== GOOGLE FONTS ===== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== FULL PAGE WRAPPER ===== */
+.contact-wrapper {
+    min-height: 100vh;
+    width: 100%;
+    /* Subtle premium gradient background */
+    background: radial-gradient(circle at top left, #f1f8e9, #e8f5e9, #dcedc8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Thoda space corners ke liye */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HEADER SECTION ===== */
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.contact-header h1 {
+    font-size: 50px; /* Bada font size */
+    font-weight: 700;
+    color: #1b5e20;
+    letter-spacing: -1px;
+}
+
+.contact-header p {
+    font-size: 18px;
+    color: #4e6e5d;
+    margin-top: 8px;
+}
+
+/* ===== MAIN LARGE CONTAINER ===== */
+.contact-container {
+    width: 100%;
+    max-width: 1250px; /* Isko bada kar diya hai 1050 se 1250 */
+    min-height: 750px; /* Ab ye container lamba dikhega */
+    background: #ffffff;
+    display: flex;
+    border-radius: 40px; /* Zyada modern aur rounded */
+    overflow: hidden;
+    box-shadow: 0 40px 100px rgba(0,0,0,0.12); /* Deep shadow for depth */
+}
+
+/* ===== LEFT SIDE: SERVICE INFO (GREEN) ===== */
+.service-info {
+    flex: 0.8; /* Side panel ko thoda compact rakha hai taaki form bada dikhe */
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 80px 50px; /* Zyada padding for luxury feel */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-info h3 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+.info-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 45px;
+}
+
+.info-item .icon {
+    font-size: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    min-width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+}
+
+.info-item h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.info-item p {
+    font-size: 15px;
+    opacity: 0.8;
+    line-height: 1.7;
+}
+
+/* BOTTOM CONTACT DETAILS */
+.direct-contact {
+    margin-top: auto; /* Sabse neeche push karne ke liye */
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.direct-contact p {
+    font-size: 16px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ===== RIGHT SIDE: FORM (WHITE) ===== */
+.contact-form {
+    flex: 1.2;
+    padding: 80px 70px; /* Zyada spacious form area */
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2e7d32;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 18px; /* Bade input fields */
+    border-radius: 15px;
+    border: 2px solid #f0f0f0;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    background: #fff;
+    border-color: #4caf50;
+    box-shadow: 0 10px 20px rgba(76, 175, 80, 0.1);
+}
+
+/* ===== LARGE SUBMIT BUTTON ===== */
+.submit-btn {
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    border: none;
+    background: #2e7d32;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 15px 30px rgba(46, 125, 50, 0.2);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.submit-btn:hover {
+    background: #1b5e20;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(46, 125, 50, 0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1100px) {
+    .contact-container {
+        max-width: 95%;
+        flex-direction: column;
+    }
+    .service-info { padding: 50px; }
+    .contact-form { padding: 50px; }
+}
